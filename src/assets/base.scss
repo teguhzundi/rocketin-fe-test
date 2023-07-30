@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap');
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  border-radius: 10px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  background: #f2f2fc;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+// Transition
+.list-slide-in {
+  &-leave-active {
+    transition:
+      opacity 0.4s linear,
+      transform 0.4s cubic-bezier(0.5, 0, 0.7, 0.4);
+    transition-delay: calc(0.1s * (var(--total) - var(--i)));
+  }
+
+  &-enter-active {
+    transition:
+      opacity 0.5s linear,
+      transform 0.5s cubic-bezier(0.2, 0.5, 0.1, 1);
+    transition-delay: calc(0.1s * var(--i));
+  }
+
+  &-enter-from,
+  &-leave-to {
+    opacity: 0;
+  }
+
+  &-enter-from {
+    transform: translateX(-1em);
+  }
+
+  &-leave-to {
+    transform: translateX(1em);
+  }
+}
