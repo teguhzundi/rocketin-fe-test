@@ -43,7 +43,6 @@ defineProps({
   &-title {
     font-size: 26px;
     margin: 0;
-    text-transform: capitalize;
     margin-bottom: 4px;
   }
 

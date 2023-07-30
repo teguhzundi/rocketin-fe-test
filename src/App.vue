@@ -59,7 +59,7 @@ const getUniqueNat = computed(() => {
 const getMostGender = computed(() => {
   const female = users.value.filter((u) => u.gender === 'female')
   const male = users.value.filter((u) => u.gender === 'male')
-  return male.length > female.length ? 'male' : 'female'
+  return male.length > female.length ? 'Male' : 'Female'
 })
 
 const getAvgAges = computed(() => {
@@ -91,7 +91,7 @@ const infographics = computed(() => [
   {
     title: getMostGender.value,
     subTitle: 'Most Gender',
-    icon: getMostGender.value === 'male' ? 'fa-mars' : 'fa-venus'
+    icon: getMostGender.value === 'Male' ? 'fa-mars' : 'fa-venus'
   },
   {
     title: `~` + getAvgAges.value,

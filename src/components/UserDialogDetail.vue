@@ -1,7 +1,7 @@
 <template>
   <Transition name="bounce" mode="out-in">
     <div class="app-dialog" v-if="show">
-      <div class="app-dialog-inner" v-if="show">
+      <div class="app-dialog-inner">
         <button class="app-dialog-close" @click="onClose">
           <font-awesome-icon icon="fa-solid fa-close" style="font-size: 18px" />
         </button>
