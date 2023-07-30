@@ -1,28 +1,30 @@
 <template>
-  <div class="app-dialog" v-if="show">
-    <div class="app-dialog-inner">
-      <button class="app-dialog-close" @click="onClose">
-        <font-awesome-icon icon="fa-solid fa-close" style="font-size: 18px" />
-      </button>
-      <div class="detail-photo-wrapper">
-        <div class="detail-photo">
-          <img :src="user.photo" />
-          <div class="detail-nat">
-            <img
-              :src="`https://flagcdn.com/16x12/${user.nat.toLowerCase()}.png`"
-              height="15"
-              :alt="user.nat.toLowerCase()"
-            />
+  <Transition name="bounce" mode="out-in">
+    <div class="app-dialog" v-if="show">
+      <div class="app-dialog-inner" v-if="show">
+        <button class="app-dialog-close" @click="onClose">
+          <font-awesome-icon icon="fa-solid fa-close" style="font-size: 18px" />
+        </button>
+        <div class="detail-photo-wrapper">
+          <div class="detail-photo">
+            <img :src="user.photo" />
+            <div class="detail-nat">
+              <img
+                :src="`https://flagcdn.com/16x12/${user.nat.toLowerCase()}.png`"
+                height="15"
+                :alt="user.nat.toLowerCase()"
+              />
+            </div>
           </div>
         </div>
-      </div>
 
-      <section class="detail-item" v-for="detail in userDetail" :key="detail.title">
-        <div>{{ detail.title }}</div>
-        <div>{{ detail.value }}</div>
-      </section>
+        <section class="detail-item" v-for="detail in userDetail" :key="detail.title">
+          <div>{{ detail.title }}</div>
+          <div>{{ detail.value }}</div>
+        </section>
+      </div>
     </div>
-  </div>
+  </Transition>
 </template>
 
 <script setup>
@@ -55,7 +57,7 @@ const onClose = () => {
 
 <style lang="scss" scoped>
 .app-dialog {
-  background-color: rgba(#000, 0.3);
+  background-color: rgba(#000, 0.2);
   position: fixed;
   min-height: 100%;
   overflow-x: auto;
@@ -65,6 +67,7 @@ const onClose = () => {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 20px;
 
   &-inner {
     background: #fff;

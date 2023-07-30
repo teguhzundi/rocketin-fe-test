@@ -66,6 +66,7 @@ const onDetail = () => {
 
     &-address {
       flex: 1;
+      display: none;
     }
 
     @media (min-width: 480px) {
@@ -79,6 +80,7 @@ const onDetail = () => {
 
       &-address {
         padding-left: 30px;
+        display: block;
       }
     }
 

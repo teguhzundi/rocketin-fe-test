@@ -61,9 +61,3 @@ const onCloseDialogDetail = () => {
   dialogData.value = {}
 }
 </script>
-
-<style lang="scss" scoped>
-.user-list {
-  display: grid;
-}
-</style>

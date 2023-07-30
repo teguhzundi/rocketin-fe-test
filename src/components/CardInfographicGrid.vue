@@ -27,6 +27,6 @@ defineProps({
 .card-grid {
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: 1fr 1fr;
 }
 </style>

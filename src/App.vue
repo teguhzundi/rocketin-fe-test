@@ -1,7 +1,7 @@
 <template>
   <div class="container app-main">
     <div v-if="loading">Please wait....</div>
-    <div v-else>
+    <template v-else>
       <h2 class="app-title">Member Dashboard</h2>
       <div class="app-infographics">
         <CardInfographicGrid :items="infographics" />
@@ -9,7 +9,7 @@
       <div class="app-users">
         <UserList :users="users" />
       </div>
-    </div>
+    </template>
   </div>
 </template>
 
@@ -115,7 +115,7 @@ const infographics = computed(() => [
 
   &-main {
     height: 100%;
-    padding: 30px 20px;
+    padding: 30px 14px 10px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -130,6 +130,7 @@ const infographics = computed(() => [
     margin-top: 30px;
     flex: 1;
     overflow-y: auto;
+    min-height: 0;
     overflow-x: hidden;
   }
 }

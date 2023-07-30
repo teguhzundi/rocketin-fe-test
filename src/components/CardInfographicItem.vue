@@ -32,8 +32,7 @@ defineProps({
   box-shadow: 0 2px 10px rgba(#ccc, 0.3);
   display: flex;
   padding: 16px;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   transition: all 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
   &:hover {
@@ -51,8 +50,22 @@ defineProps({
   &-subtitle {
     color: #666;
   }
+
   &-icon {
-    font-size: 50px;
+    margin-top: 10px;
+    font-size: 20px;
+  }
+
+  @media (min-width: 480px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+
+    &-icon {
+      font-size: 50px;
+      margin-top: 0;
+    }
   }
 }
 </style>

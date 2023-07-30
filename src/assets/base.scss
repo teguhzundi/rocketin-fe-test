@@ -43,7 +43,7 @@ body {
   font-weight: bold;
 }
 
-// Transition
+// Transition & Animation
 .list-slide-in {
   &-leave-active {
     transition:
@@ -70,5 +70,25 @@ body {
 
   &-leave-to {
     transform: translateX(1em);
+  }
+}
+
+.bounce-enter-active {
+  animation: bounce-animate 200ms;
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.bounce-leave-active {
+  animation: bounce-animate 200ms reverse;
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes bounce-animate {
+  0% {
+    transform: scale(1.3);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }
